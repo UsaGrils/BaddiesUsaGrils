@@ -1,0 +1,180 @@
+<style>
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+
+/* FULLSCREEN */
+.fake-player {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: url("https://cdn.aceimg.com/bQMygulhK.jpg")
+              center center / cover no-repeat;
+
+  overflow: hidden;
+  z-index: 2147483647;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.fake-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.40);
+}
+
+/* PLAY BUTTON */
+.fake-play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  /* BIRU MUDA CERAH */
+  background: #4fc3f7;
+
+  z-index: 3;
+
+  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+}
+
+/* ICON PLAY PUTIH */
+.fake-play:after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-35%, -50%);
+
+  width: 0;
+  height: 0;
+
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 36px solid #fff;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 22px 35px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+
+  z-index: 4;
+}
+
+.top-bar span {
+  background: rgba(0,0,0,.55);
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+/* PROGRESS BAR */
+.progress {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background: rgba(255,255,255,.30);
+
+  z-index: 5;
+}
+
+.bar {
+  width: 38%;
+  height: 100%;
+  background: #ff0000;
+}
+
+/* HP */
+@media (max-width: 600px) {
+
+  .fake-play {
+    width: 110px;
+    height: 110px;
+  }
+
+  .fake-play:after {
+    border-top-width: 25px;
+    border-bottom-width: 25px;
+    border-left-width: 36px;
+  }
+
+  .top-bar {
+    padding: 20px 25px;
+    font-size: 16px;
+  }
+
+  .top-bar span {
+    padding: 8px 16px;
+  }
+
+  .progress {
+    height: 5px;
+  }
+}
+</style>
+
+<div class="fake-player" onclick="goVideo()">
+
+  <div class="fake-overlay"></div>
+
+  <div class="top-bar">
+    <span>videy</span>
+    <span>Upload</span>
+  </div>
+
+  <div class="fake-play"></div>
+
+  <div class="progress">
+    <div class="bar"></div>
+  </div>
+
+</div>
+
+<script>
+function goVideo() {
+  window.location.href = "https://x-hubb.github.io/L0oksmn3/";
+}
+</script>
